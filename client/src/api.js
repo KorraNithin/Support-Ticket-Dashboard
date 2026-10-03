@@ -1,4 +1,4 @@
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+const BASE = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '/api' : 'http://localhost:4000/api');
 
 /** Error carrying the API's { code, message, details } so forms can show field errors. */
 export class ApiError extends Error {
